@@ -1,11 +1,12 @@
 class Bike:
     def __init__(self, number, bike_type):
         # номер і тип: "regular" або "electric"
-        pass
+        self.number = number
+        self.bike_type = bike_type
 
     def is_electric(self):
         # повертає True, якщо велосипед електричний
-        pass
+        return self.bike_type == "electric"
 
 
 class Station:
