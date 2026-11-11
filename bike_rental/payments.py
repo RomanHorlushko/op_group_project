@@ -1,20 +1,26 @@
 class Payment:
-#Клас для обробки розрахунків та виручки.
 
     def __init__(self):
-        #Ініціалізує загальну виручку початковим значенням 0.0.
-        pass
+        self.total_revenue = 0.0
 
     def calc_cost(self, bike, minutes: int):
-        #Обчислює вартість поїздки залежно від типу велосипеда та хвилин.
-        #Повертає підсумкову ціну.
-        pass
+        if minutes <= 0:
+            raise ValueError("Кількість хвилин має бути більшою за 0")
+
+        if bike.is_electric():
+            rate = 5
+        else:
+            rate = 2
+
+        return rate * minutes
+
 
     def pay(self, client, bike, minutes: int):
-        #Списує кошти з balance клієнта, додає суму до total_revenue.
-        #Повертає сплачену суму.
-        pass
+        cost = self.calc_cost(bike, minutes)
+        client.charge(cost)
+        self.total_revenue += cost
+        return cost
+
 
     def get_total_revenue(self):
-        #Повертає загальну накопичену виручку.
-        pass
+        return self.total_revenue
