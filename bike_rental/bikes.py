@@ -12,20 +12,23 @@ class Bike:
 class Station:
     def __init__(self, name):
         # назва станції і порожній список велосипедів
-        pass
+        self.name = name
+        self.bikes = []
 
     def add_bike(self, bike):
         # ставить велосипед на станцію
-        pass
+        self.bikes.append(bike)
 
     def take_bike(self):
         # повертає Bike або None, якщо станція порожня
-        pass
+        if not self.bikes:
+            return None
+        return self.bikes.pop()
 
     def has_bikes(self):
         # повертає True, якщо є хоча б один велосипед
-        pass
+        return len(self.bikes) > 0
 
     def count(self):
         # повертає кількість велосипедів на станції
-        pass
+        return len(self.bikes)
