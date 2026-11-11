@@ -1,7 +1,7 @@
 class Payment:
 
     def __init__(self):
-        self.total_revenue = 0.0
+        self.total_revenue = 0
 
     def calc_cost(self, bike, minutes: int):
         if minutes <= 0:
