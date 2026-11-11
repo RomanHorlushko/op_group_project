@@ -8,6 +8,8 @@ class Rental:
         if not station.has_bikes():
             return False, "no_bikes"
         bike = station.take_bike()
+        if bike is None:
+            return False, "no_bikes"
         client.current_bike = bike
         return True, bike
 
