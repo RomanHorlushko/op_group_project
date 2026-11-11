@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/34689403/README.1.md)
 # Прокат велосипедів · Архітектурне бюро
 
 ## Команда
@@ -14,7 +13,6 @@
 Посилання на репозиторій: https://github.com/RomanHorlushko/op_group_project
 
 ---
-мож
 ## Етап 1. Іменники й дієслова
 
 **Іменники** (усі з брифу):
