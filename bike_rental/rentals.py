@@ -5,11 +5,13 @@ class Rental:
     def rent_bike(self, client, station):
         if client.current_bike is not None:
             return False, "already_riding"
-        if not station.has_bikes():
+        if station.count() == 0:
             return False, "no_bikes"
+        if not station.has_bikes():
+            return False, "low_battery"
         bike = station.take_bike()
         if bike is None:
-            return False, "no_bikes"
+            return False, "low_battery"
         client.current_bike = bike
         return True, bike
 
